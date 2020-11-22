@@ -9,6 +9,10 @@ class HomeView(ListView):
     template_name = 'home.html'
     ordering = ['-post_date']
 
+def CategoryView(request, cats):
+    category_posts = Post.objects.filter(category=cats.replace('-', ' '))
+    return render(request, 'categories.html', {'cats': cats.title().replace('-', ' '), 'category_posts': category_posts})
+
 class ArticleDetailView(DetailView):
     model = Post
     template_name = 'article_detail.html'
