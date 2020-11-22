@@ -3,19 +3,23 @@
 
 {% block content %}
 
-{% if user.is_authenticated %}
-    <h1>Add Blog Post</h1>
-    <br/><br/>
-    <div class="form-group">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p}}
-            <button class="btn btn-secondary">Post</button>
-    </div>
-{% else %}
+    {% if user.is_authenticated %}
+        <h1>Add Blog Post</h1>
+        <br/><br/>
+        <div class="form-group">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p}}
+                <button class="btn btn-secondary">Post</button>
+        </div>
 
-You're not allowed here! (and you know it...)
+        <script>
+            var name = "{{ user.id }}";
+            document.getElementById("elder").value = name;
+        </script>
 
-{% endif %}
+    {% else %}
+        You're not allowed here! (and you know it...)
+    {% endif %}
 
 {% endblock %}
