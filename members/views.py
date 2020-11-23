@@ -7,6 +7,11 @@ from django.urls import reverse_lazy
 from .forms import SignUpForm, EditProfileForm, PasswordChangingForm
 from theblog.models import Profile
 
+class EditProfilePageView(generic.UpdateView):
+    model = Profile
+    template_name = 'registration/edit_profile_page.html'
+    fields = ['bio', 'profile_pic', 'website_url', 'facebook_url', 'twitter_url', 'instagram_url', 'pinterest_url']
+    success_url = reverse_lazy('home')
 
 class ShowProfilePageView(DetailView):
     model = Profile
@@ -20,7 +25,6 @@ class ShowProfilePageView(DetailView):
 
         context['page_user'] = page_user
         return context
-
 
 class PasswordsChangeView(PasswordChangeView):
     form_class = PasswordChangingForm
