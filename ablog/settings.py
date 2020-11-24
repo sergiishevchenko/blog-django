@@ -5,7 +5,7 @@ from decouple import config
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'mxghr6ab8w+)iah7i1%*2t2g22tzzv4q5@q6ko2z5wwrw!zy3t'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
