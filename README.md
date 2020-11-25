@@ -15,5 +15,6 @@ python3 manage.py migrate
 python manage.py createsuperuser
 python3 manage.py runserver
 ```
+After starting Django, a link like http://127.0.0.1:8000/ will appear - click on it.
 
-Deployed project you can find here - https://blog-django-sql.herokuapp.com/
+The app is ready for local use!
